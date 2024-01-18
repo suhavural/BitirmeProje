@@ -31,23 +31,23 @@ Gsm modülün ilk kurulumunda internete ihtiyaç vardır bu yüzden wifi ile vey
 
 gsmsetup.zip dosyasını raspberry pi'nin /home/pi dizinine aktarın
 
-wget https://github.com/bartinbu/gsmsetup/raw/main/gsmsetup.zip
+```wget https://github.com/bartinbu/gsmsetup/raw/main/gsmsetup.zip```
 
 /home/pi dizininde terminal açın Zip dosyasını çıkartın
 
-unzip gsmsetup.zip
+```unzip gsmsetup.zip```
 
 /home/pi/gsmsetup dizinine gidin
 
-cd gsmsetup
+```cd gsmsetup```
 
 Tüm .sh uzantılı dosyalara +x yetkisi verin
 
-sudo chmod +x *.sh
+```sudo chmod +x *.sh```
 
 sudo haklarıyla install.sh dosyasını çalıştırın.
 
-sudo ./install.sh
+```sudo ./install.sh```
 
 GSM shiled üzerindeki ışıklar yanmaya başlayacaktır. İnternet bağlantısı için hat takılı olmalıdır. Hat takılı değilken de kurulum yapılabilir.
 
@@ -61,9 +61,9 @@ Eğer yine de gelmediyse yeniden başlatmayı deneyebilirsiniz.
 Firebase'e veri göndermek istediğiniz kod için öncelikle "Project Settings" kısmından "Service Accounts" kısmına girin ve "Generate new private key" butonuna tıklayın ardından bir JSON dosyası inecektir dosyanızın yolunu bulun ve koda şu şekilde ekleyin.
 Bunu kodunuzda şu şekilde göstereceksiniz
 
- cred = credentials.Certificate("/home/pi/Downloads/raspberrypi7474-firebase-adminsdk-kqrrl-a642f17d92.json") # Firebase Console'dan indirdiğiniz JSON dosyasını belirtin
+ ```cred = credentials.Certificate("/home/pi/Downloads/raspberrypi7474-firebase-adminsdk-kqrrl-a642f17d92.json") ```# Firebase Console'dan indirdiğiniz JSON dosyasını belirtin
 
- firebase_admin.initialize_app(cred, {'databaseURL': 'https://raspberrypi7474-default-rtdb.firebaseio.com/'})  # Bu URL'yi kendi Firebase proje URL'nizle değiştirin Örnek aşağıda verilmiştir.
+``` firebase_admin.initialize_app(cred, {'databaseURL': 'https://raspberrypi7474-default-rtdb.firebaseio.com/'}) ``` # Bu URL'yi kendi Firebase proje URL'nizle değiştirin Örnek aşağıda verilmiştir.
 
 ![4](https://github.com/suhavural/BitirmeProje/assets/77546710/7b706b4c-c7d9-4d26-904b-ae46d79360a8)
 
